@@ -39,15 +39,11 @@ class Appendable(object):
 class Popable(object):
     def pop(self):
         """Removes the first node from the stack"""
-        first = self.start
-
-        if first is None:
+        if self.start is None:
             raise IndexError()
-        else if first.next is not None:
-            self.start = first.next
-        else:
-            self.start = None;
-
+        
+        first = self.start
+        self.start = first.next
         return first.value;
 
 
